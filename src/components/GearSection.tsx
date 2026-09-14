@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Google Drive Konfiguracija
-const GOOGLE_API_KEY = "AIzaSyBV3-BTocB3a060sAHsh6GnFHHEPx5lAoA";
+// Povlačenje isključivo iz okruženja (bez rezervnih ključeva u kôdu)
+const GOOGLE_API_KEY = __GOOGLE_DRIVE_API_KEY__;
 const FOLDER_ID = "1PkhyofoNITjuadSME6JM2xF_yTh15IjF";
 
 interface DriveImage {
@@ -45,6 +45,12 @@ export const GearSection: React.FC = () => {
   // Povlačenje slika sa Google Drive API-ja
   useEffect(() => {
     async function fetchImages() {
+      if (!GOOGLE_API_KEY) {
+        console.error("VITE_GOOGLE_DRIVE_API_KEY nedostaje u .env fajlu.");
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
         const query = encodeURIComponent(`'${FOLDER_ID}' in parents and mimeType contains 'image/' and trashed = false`);
@@ -53,11 +59,11 @@ export const GearSection: React.FC = () => {
         const response = await fetch(url);
         const data = await response.json();
 
-        if (data.files) {
+        if (data.files && data.files.length > 0) {
           const formattedImages: DriveImage[] = data.files.map((file: { id: string; name: string }) => ({
             id: file.id,
             name: file.name.replace(/\.[^/.]+$/, ""), // Uklanja ekstenziju fajla (.jpg, .png)
-            url: `https://drive.google.com/thumbnail?id=${file.id}&sz=w1600`, // Pouzdani URL koji sprečava blokiranje
+            url: `https://lh3.googleusercontent.com/d/${file.id}`, // Stabilan CDN URL
           }));
           setImages(formattedImages);
         }
@@ -83,7 +89,7 @@ export const GearSection: React.FC = () => {
     });
   }, { scope: sectionRef });
 
-  // GSAP Animacija za kartice pri svakom učitavanju novih 4 slika
+  // GSAP Animacija za kartice
   useEffect(() => {
     if (!loading && images.length > 0) {
       gsap.fromTo(
@@ -124,11 +130,11 @@ export const GearSection: React.FC = () => {
           <p className="text-base sm:text-lg text-slate-400 font-sans">{t("gear.description")}</p>
         </div>
 
-        {/* Loader dok se slike preuzimaju sa Drive-a */}
+        {/* Loader */}
         {loading && (
           <div className="flex flex-col items-center justify-center py-20 space-y-3">
             <Loader2 className="w-8 h-8 text-[#00E5FF] animate-spin" />
-            <p className="text-xs text-slate-400 font-medium tracking-wider uppercase">Učitavanje slika sa Google Drive-a...</p>
+            <p className="text-xs text-slate-400 font-medium tracking-wider uppercase">Učitavanje slika...</p>
           </div>
         )}
 
@@ -149,9 +155,7 @@ export const GearSection: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    if (!target.src.includes('lh3.googleusercontent.com')) {
-                      target.src = `https://lh3.googleusercontent.com/d/${item.id}`;
-                    }
+                    target.src = `https://drive.google.com/thumbnail?id=${item.id}&sz=w1600`;
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -171,7 +175,7 @@ export const GearSection: React.FC = () => {
           </div>
         )}
 
-        {/* Dugmad za proširivanje (Show More / Show Less) */}
+        {/* Dugmad za proširivanje */}
         {!loading && images.length > 4 && (
           <div className="mt-12 flex justify-center items-center gap-4">
             {hasMore ? (
@@ -196,7 +200,7 @@ export const GearSection: React.FC = () => {
         )}
       </div>
 
-      {/* Lightbox / Prikaz preko celog ekrana na klik */}
+      {/* Lightbox */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-2xl p-4"

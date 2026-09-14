@@ -12,9 +12,9 @@ import { useTranslation } from "react-i18next";
 gsap.registerPlugin(ScrollTrigger);
 
 // ─── Google Calendar Config ─────────────────────────────────────────────────
-const GOOGLE_API_KEY = "AIzaSyA7qdiPBhIbba43a7_gdx2Pclwy3IDQJaY";
-const CALENDAR_ID =
-  "871f63891476fedc59363ce104157fe61bd54489a966f52da9ff2c831579a668@group.calendar.google.com";
+// ─── Google Calendar Config ─────────────────────────────────────────────────
+const GOOGLE_API_KEY = __GOOGLE_API_KEY__;
+const CALENDAR_ID = __CALENDAR_ID__;
 
 // ─── Raw GCal Event Shape ───────────────────────────────────────────────────
 interface GCalEvent {

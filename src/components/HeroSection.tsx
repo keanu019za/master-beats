@@ -256,9 +256,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 return (
                   <>
                     {rest.substring(0, mi)}
-                    <span className="text-[#FF0055] font-semibold">Miloš Mladenović</span>
+                    <span className="text-[#FF0055] font-semibold">Dušan Đorđević</span>
                     {rest.substring(mi + "Miloš Mladenović".length, du)}
-                    <span className="text-[#00E5FF] font-semibold">Dušan Đorđević</span>
+                    <span className="text-[#00E5FF] font-semibold">Miloš Mladenović</span>
                     {rest.substring(du + "Dušan Đorđević".length)}
                   </>
                 );
@@ -347,7 +347,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     {gigLoading ? (
                       <div className="flex items-center gap-2 mt-1">
                         <Loader2 className="w-4 h-4 text-white/40 animate-spin" />
-                        <span className="text-sm text-white/40 font-mono">Fetching live dates...</span>
+                        <span className="text-sm text-white/40 font-sans">Fetching live dates...</span>
                       </div>
                     ) : (
                       <>
@@ -419,7 +419,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
                 {/* Event date label beneath the grid */}
                 {!gigLoading && nextGig && (
-                  <p className="mt-3 text-center text-[10px] font-mono text-white/30 tracking-wider uppercase">
+                  <p className="mt-3 text-center text-[10px] font-sans text-white/30 tracking-wider uppercase">
                    
                   </p>
                 )}

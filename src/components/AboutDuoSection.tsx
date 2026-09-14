@@ -116,9 +116,9 @@ export const AboutDuoSection: React.FC = () => {
                   </div>
 
                   {/* Micro Performance Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 border border-[#FF0055]/20 text-[11px] font-sans text-white/80">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 border border-[#FF0055]/20 text-[11px] font-sans font-semibold text-white/80">
                     <Disc3 className="w-3.5 h-3.5 text-[#FF0055] animate-spin-slow" />
-                    <span>SYNTH &amp; MIDI ENGINE</span>
+                    <span>ACOUSTIC & BALKAN RESONANCE</span>
                   </div>
                 </div>
 
@@ -197,9 +197,9 @@ export const AboutDuoSection: React.FC = () => {
                     </div>
 
                   {/* Micro Performance Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 border border-[#00E5FF]/20 text-[11px] font-sans text-white/80">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/40 border border-[#00E5FF]/20 text-[11px] font-sans font-semibold text-white/80">
                     <Radio className="w-3.5 h-3.5 text-[#00E5FF]" />
-                    <span>ACOUSTIC &amp; BALKAN RESONANCE</span>
+                    <span>ELECTRIC &amp; MIDI</span>
                   </div>
                 </div>
 

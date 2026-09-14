@@ -244,26 +244,37 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-slate-400 font-sans max-w-xl hero-left-item">
-              {t("hero.description").replace(/<[^>]+>/g, "").split("Master&Beats")[0]}
-              <strong className="text-white font-semibold">Master&amp;Beats</strong>
-              {(() => {
-                const after = t("hero.description").replace(/<[^>]+>/g, "");
-                const rest  = after.split("Master&Beats")[1] ?? "";
-                const mi    = rest.indexOf("Miloš Mladenović");
-                const du    = rest.indexOf("Dušan Đorđević");
-                if (mi === -1) return rest;
-                return (
-                  <>
-                    {rest.substring(0, mi)}
-                    <span className="text-[#FF0055] font-semibold">Dušan Đorđević</span>
-                    {rest.substring(mi + "Miloš Mladenović".length, du)}
-                    <span className="text-[#00E5FF] font-semibold">Miloš Mladenović</span>
-                    {rest.substring(du + "Dušan Đorđević".length)}
-                  </>
-                );
-              })()}
-            </p>
+           <p className="text-sm sm:text-base text-slate-400 font-sans max-w-xl hero-left-item">
+  {(() => {
+    const rawText = t("hero.description").replace(/<[^>]+>/g, "");
+    const parts = rawText.split(/(Master&Beats|Miloš Mladenović|Dušan Đorđević)/g);
+
+    return parts.map((part, index) => {
+      if (part === "Master&Beats") {
+        return (
+          <strong key={index} className="text-white font-semibold">
+            Master&amp;Beats
+          </strong>
+        );
+      }
+      if (part === "Miloš Mladenović") {
+        return (
+          <span key={index} className="text-[#00E5FF] font-semibold">
+            Miloš Mladenović
+          </span>
+        );
+      }
+      if (part === "Dušan Đorđević") {
+        return (
+          <span key={index} className="text-[#FF0055] font-semibold">
+            Dušan Đorđević
+          </span>
+        );
+      }
+      return part;
+    });
+  })()}
+</p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2 hero-left-item">

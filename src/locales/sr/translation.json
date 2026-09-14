@@ -1,0 +1,234 @@
+﻿{
+  "nav": {
+    "music": "Muzika i Ritmovi",
+    "tour": "Termini Nastupa",
+    "about": "Duo",
+    "gear": "Zvuk i Oprema",
+    "bookDuo": "Zakazivanje",
+    "audioDemoPlaying": "UŽIVO",
+    "audioDemo": "Audio Demo",
+    "mobileMenu": {
+      "music": "Muzika i Živi Ritmovi",
+      "tour": "Raspored Turneja i Festivala",
+      "about": "O Milošu i Dušanu",
+      "gear": "Akustična i Električna Tehnologija",
+      "bookBtn": "Upit za Zakazivanje Nastupa"
+    },
+    "lang": {
+      "en": "EN",
+      "sr": "SRB"
+    }
+  },
+  "hero": {
+    "badge": "Živi Elektro-Akustični Duo",
+    "instrument": "Električna harmonika + Akustična konc. umetnost",
+    "tagline": "MASTER &",
+    "description": "Uđite u zvučnu revoluciju <strong>Master&Beats</strong>. Osnovan u Srbiji, virtuozi <red>Miloš Mladenović</red> (Električna harmonika) i <teal>Dušan Đorđević</teal> (Akustična harmonika) spajaju klasično majstorstvo, balkanski ritam i savremene elektronske festivale.",
+    "bookBtn": "Zakažite Nastup",
+    "watchBtn": "Pogledajte Showreel",
+    "trust": {
+      "title": "#1 BALKANSKI ELEKTRO-AKUSTIČNI DUO",
+      "subtitle": "Nastupaju širom Evrope"
+    },
+    "heroCard": {
+      "nextHeadline": "Sledeći Nastup",
+      "venue": "EXIT FESTIVAL NOVI SAD",
+      "stage": "Dance Arena i Fusion Bina • Srbija"
+    },
+    "timer": {
+      "label": "DO SLEDEĆEG NASTUPA",
+      "days": "Dana",
+      "hours": "Sati",
+      "mins": "Min",
+      "secs": "Sek"
+    },
+    "tourCard": {
+      "title": "SVETSKA TURNEJA 2026",
+      "badge": "ZVANIČNO",
+      "leg": "Evropska Elektro Etapa",
+      "countries": "Srbija • Austrija • Švajcarska • Mađarska",
+      "statusLabel": "Status",
+      "statusValue": "Termini Slobodni",
+      "viewSchedule": "Pogledaj Raspored"
+    }
+  },
+  "player": {
+    "badge": "Živi Medijski Strim",
+    "title": "ELEKTRO-AKUSTIČNI",
+    "titleAccent": "NUMERE",
+    "description": "Doživite dvojnu sinergiju: digitalna sinteza harmonike Miloša Mladenovića sudara se sa rezonantnim akustičnim tonovima Dušana Đorđevića.",
+    "spotify": "Spotify",
+    "soundcloud": "SoundCloud",
+    "youtube": "YouTube",
+    "interactiveMode": "Interaktivni Sintetizator Mod",
+    "tracks": "Numere",
+    "prev": "Prethodna Numera",
+    "next": "Sledeća Numera",
+    "play": "Pusti Demo Sintetizatora",
+    "pause": "Pauziraj",
+    "mute": "Isključi Zvuk",
+    "unmute": "Uključi Zvuk"
+  },
+  "tour": {
+    "badge": "Raspored Živih Nastupa 2026",
+    "title": "PREDSTOJEĆI",
+    "titleAccent": "TERMINI NASTUPA",
+    "description": "Pratite duo uživo na velikim evropskim festivalima i club arenama. Svedočite harmonikaškoj umetnosti pretvorenoj u elektronske zvučne pejzaže.",
+    "filters": {
+      "all": "Svi Nastupi",
+      "festival": "Festivali",
+      "club": "Klubovi",
+      "concert": "Koncerti"
+    },
+    "status": {
+      "sellingFast": "Rasprodaja u toku",
+      "soldOut": "Rasprodato",
+      "available": "Karte Dostupne"
+    },
+    "from": "Od",
+    "generalEntry": "Slobodan Ulaz",
+    "vipBtn": "VIP / Promoter",
+    "bookBtn": "Rezervacija / Karte",
+    "cta": {
+      "badge": "Promoteri Festivala i Organizatori Događaja",
+      "title": "ŽELITE DA DOVEDETE MASTER&BEATS NA VAŠU BINU?",
+      "description": "Otvoreni za evropske i međunarodne festivale, rezijedncije u klubovima i prilagođene elektro-akustične produkcije.",
+      "btn": "Pošalji Upit Promotera"
+    }
+  },
+  "about": {
+    "badge": "Poreklo i Identitet • Osnovano 2019",
+    "title": "ARHITEKTI",
+    "titleAccent": "ELEKTRO-HARMONIKE",
+    "description": "<strong>Master&Beats</strong> je moderni elektro-akustični duo iz Srbije osnovan 2019. godine, koji kombinuje električnu harmoniku (<red>Miloš Mladenović</red>) i akustičnu harmoniku (<teal>Dušan Đorđević</teal>). Spajaju izražajnu harmonikašku umetnost sa savremenim EDM, pop i elektronskim zvukovima.",
+    "tabs": {
+      "profile": "Profili Umetnika",
+      "sound": "Dvojna Zvučna Arhitektura"
+    },
+    "milos": {
+      "role": "MAJSTOR SYNTH-a I MIDI-ja",
+      "name": "MILOŠ MLADENOVIĆ",
+      "instrument": "Digitalna Zvučna Sinteza i Električna Harmonika",
+      "tag1": "Roland Digitalni Motor",
+      "tag2": "MIDI Modulacija",
+      "bio": "Miloš redefinišer harmoniku kao futurističi sintetizator kontroler. Koristeći polifonske MIDI trigere, digitalnu ekspresiju mehova i matrice distorzije, oslobađa blistave solo deonice, oštre arpeđe i teške basline koji pokreću nastupe dua.",
+      "sigTitle": "Karakteristični Elementi:",
+      "sig1": "Filter otse­ka i pitch bend ekspresija kontrolisana mehovima",
+      "sig2": "Overdrive i cyber-chorus elektronska obrada harmonike",
+      "sig3": "Živi trigger padovi koji okidaju 808 sub dropove i tech-house stabove",
+      "quote": "\"Harmonika je krajnji sintetizator.\"",
+      "colorCode": "#FF0055 NEON MAGENTA"
+    },
+    "dusan": {
+      "role": "VIRTUOZ AKUSTIČNI MAESTRO",
+      "name": "DUŠAN ĐORĐEVIĆ",
+      "instrument": "Konc. Komorska Rezonanca i Balkanski Folklorni Duh",
+      "tag1": "Koncertni Trstovi",
+      "tag2": "Poliritmički Ornament",
+      "bio": "Dušan obezbeđuje živi ljudski puls dua. Obrazovan u klasičnoj harmonikaškoj literaturi i prožet srpskim folklorom, njegov akustični instrument isijava organsku toplinu, brze balkanske ornamente i uzdignute melodijske harmonije.",
+      "sigTitle": "Karakteristični Elementi:",
+      "sig1": "Akustična bogatost cassotto rezonantne komore sa duplim trstovima",
+      "sig2": "Složeni 7/8, 9/8 i 11/8 srpski i balkanski plesni metri",
+      "sig3": "Prilagođeni kondenzatorski mikrofon za visoku vernost zvuka",
+      "quote": "\"Balkanska duša u čeličnom kiberprostor­u.\"",
+      "colorCode": "#00E5FF CYBER CYAN"
+    },
+    "sonic": {
+      "el1Title": "01. ELEKTRIČNA SLOBODA",
+      "el1Body": "Pritisak mehova električne harmonike se u realnom vremenu prevodi u frekvencije filtera, talasnu distorziju i okidače omotnice, pretvarajući fizičke pokrete u eksplozivne sintetizatorske modulacije.",
+      "el2Title": "02. ŽIVA SINERGIJA",
+      "el2Body": "Umesto unapred snimljenih podloga, oba umetnika nastupaju u tesnom polifonom dijalogu. Miloš vodi digitalne deonice i sub-bas, dok Dušan odgovara akustičnim kontra-melodijama.",
+      "el3Title": "03. BALKANSKA HROMATIKA",
+      "el3Body": "Ukorenjeni u vekovima tradicije južnoslovenske harmonike, njihova muzika integriše mikrotonalne infleksije, ornamentalne trilere i munjevite hromatske triplete u futurističke plesne ritmove."
+    }
+  },
+  "gear": {
+    "badge": "Poreklo i Identitet • Osnovano 2019",
+    "title": "ARHITEKTI",
+    "titleAccent": "ELEKTRO-HARMONIKE",
+    "description": "Vizuelni prikazi elektro-akustičnih instalacija, festivalskih nastupa i živih bina.",
+    "items": {
+      "1": { "title": "GLAVNA BINA EXIT FESTIVALA", "category": "ŽIVI NASTUP" },
+      "2": { "title": "POSTAVA ELEKTRIČNE HARMONIKE", "category": "OPREMA I SYNTH" },
+      "3": { "title": "SYNTH I BEAT DROP", "category": "STUDIJSKO POSTROJENJE" },
+      "4": { "title": "BEOGRADSKI NOĆNI KLUB", "category": "ATMOSFERA BINE" }
+    }
+  },
+  "booking": {
+    "officialBadge": "ZVANIČNI UPIT ZA ZAKAZIVANJE",
+    "title": "DOVEDITE MASTER & BEATS NA VAŠU BINU",
+    "description": "Popunite ovaj kratki upit za festivale, klubove ili prilagođene elektro-akustične koncertne rezervacije širom Evrope i sveta.",
+    "labels": {
+      "name": "Vaše Ime / Organizacija *",
+      "email": "Zvanični Email *",
+      "phone": "Telefon / WhatsApp",
+      "eventType": "Tip Događaja *",
+      "date": "Predloženi Datum *",
+      "venue": "Mesto i Grad / Zemlja *",
+      "message": "Poruka i Zahtevi za Nastup",
+      "riderCheckbox": "Molim priložite 2026 Master&Beats Tehnički Zvučni i Scenski Rider (PDF)."
+    },
+    "placeholders": {
+      "name": "npr. Petar Petrović (EXIT Festival)",
+      "email": "promoter@festival.com",
+      "phone": "+381 60 123 4567",
+      "date": "npr. 15. oktobar 2026. ili Jesen 2026.",
+      "venue": "npr. Club Kaufleuten, Cirih",
+      "message": "Podelite detalje o scenskom postrojenju, očekivanom broju publike ili preferiranom trajanju nastupa (60 / 90 min)..."
+    },
+    "eventTypes": {
+      "festival": "Muzički Festival",
+      "club": "Elektronika / Noć u Klubu",
+      "corporate": "Korporativni Događaj / Gala",
+      "private": "Privatni VIP Događaj"
+    },
+    "submitBtn": "Pošalji Upit za Zakazivanje",
+    "submitting": "Slanje Upita za Rezervaciju...",
+    "success": {
+      "ref": "UPIT POSLAT • REF:",
+      "title": "ZAHTEV ZA REZERVACIJU PRIMLJEN",
+      "body": "Hvala, <name/>. Naš menadžment tim će pregledati vaše termine za <location/> i odgovoriti u roku od 24 sata sa tehničkim riderom i dostupnošću.",
+      "organizer": "Organizator:",
+      "email": "Email:",
+      "eventFormat": "Format Događaja:",
+      "directContact": "Direktan Kontakt:",
+      "backBtn": "Povratak na Iskustvo"
+    }
+  },
+  "video": {
+    "liveBadge": "ŽIVI FESTIVALSKI SHOWREEL • 4K",
+    "title": "MASTER & BEATS — UŽIVO NA EXIT FESTIVALU 2025",
+    "officialAfter": "Zvanični Aftermovie",
+    "description": "Snimljeno uživo na Dance Areni i Fusion Bini u Novom Sadu, Srbija. Dvoboj električne i akustične harmonike iznad 132 BPM elektronskih ritmova.",
+    "watchYoutube": "Pogledaj na YouTube-u",
+    "bookBtn": "Rezervišite za Vaš Festival"
+  },
+  "footer": {
+    "description": "Miloš Mladenović (Električna harmonika) i Dušan Đorđević (Akustična harmonika). Elektro-akustični duo osnovan 2019. u Srbiji, koji tradicionalnu harmonikašku umetnost pretvara u futurističku elektronsku festivalsku muziku.",
+    "contactLabel": "Direktan Menadžment i Upiti",
+    "nav": {
+      "title": "Navigacija",
+      "home": "Početna",
+      "audio": "Živi Sintetizator Audio",
+      "tour": "Termini Turneja i Festivala",
+      "about": "O Milošu i Dušanu",
+      "gear": "Tehnologija i Oprema"
+    },
+    "stream": {
+      "title": "Slušaj i Prati",
+      "youtube": "YouTube Kanal",
+      "soundcloud": "SoundCloud",
+      "instagram": "Instagram",
+      "riderPdf": "Zatraži Tehnički Rider PDF"
+    },
+    "newsletter": {
+      "title": "Obaveštenja o Turnejama",
+      "description": "Budite prvi koji dobijaju neobjavljene festivalske snimke, datume nastupa i ulaznice za backstage.",
+      "placeholder": "Unesite vaš email",
+      "spam": "Bez spama. Samo energični izveštaji o turnejama.",
+      "subscribed": "Pretplaćeni ste na Obaveštenja o Turnejama!"
+    },
+    "copyright": "Sva prava zadržana. Beograd, Srbija.",
+    "craftedFor": "Kreirano za Elektro-Akustičnu Umetnost"
+  }
+}

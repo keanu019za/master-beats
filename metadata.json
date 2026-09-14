@@ -1,0 +1,6 @@
+{
+  "name": "Master & Beats — Electro-Acoustic Accordion Duo",
+  "description": "Interactive web app for Serbian electro-acoustic accordion duo Master & Beats featuring futuristic cyberpunk aesthetic, interactive audio player with real synthesizer audio waveforms, tour dates, and booking system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

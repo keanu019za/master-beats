@@ -1,0 +1,234 @@
+﻿{
+  "nav": {
+    "music": "Music & Beats",
+    "tour": "Tour Dates",
+    "about": "The Duo",
+    "gear": "Gallery",
+    "bookDuo": "Book Duo",
+    "audioDemoPlaying": "PLAYING LIVE",
+    "audioDemo": "Audio Demo",
+    "mobileMenu": {
+      "music": "Music & Live Beats",
+      "tour": "Tour & Festival Schedule",
+      "about": "About Dušan & Miloš",
+      "gear": "Acoustic & Electric Technology",
+      "bookBtn": "Inquire Event Booking"
+    },
+    "lang": {
+      "en": "EN",
+      "sr": "SRB"
+    }
+  },
+  "hero": {
+    "badge": "Live Electro-Acoustic Duo",
+    "instrument": "Electric Accordion & Acoustic Concert Artistry",
+    "tagline": "MASTER &",
+    "description": "Step into the sonic revolution of <strong>Master&Beats</strong>. Founded in Serbia, virtuosos <red>Miloš Mladenović</red> (Electric Accordion) and <teal>Dušan Đorđević</teal> (Acoustic Accordion) fuse classical mastery, Balkan rhythmic fury, and cutting-edge electronic festival drops.",
+    "bookBtn": "Book Performance",
+    "watchBtn": "Watch Live Showreel",
+    "trust": {
+      "title": "#1 BALKAN ELECTRO-ACOUSTIC DUO",
+      "subtitle": "Booked across Europe"
+    },
+    "heroCard": {
+      "nextHeadline": "Next Live Headline",
+      "venue": "EXIT FESTIVAL NOVI SAD",
+      "stage": "Dance Arena & Fusion Stage • Serbia"
+    },
+    "timer": {
+      "label": "NEXT GIG STARTS IN",
+      "days": "Days",
+      "hours": "Hours",
+      "mins": "Mins",
+      "secs": "Secs"
+    },
+    "tourCard": {
+      "title": "EVENT DETAILS",
+      "badge": "OFFICIAL",
+      "leg": "European Electro Leg",
+      "countries": "Serbia • Austria • Switzerland • Hungary",
+      "statusLabel": "Status",
+      "statusValue": "Dates Open",
+      "viewSchedule": "View Schedule"
+    }
+  },
+  "player": {
+    "badge": "Live Media Stream",
+    "title": "ELECTRO-ACOUSTIC",
+    "titleAccent": "TRACKS",
+    "description": "Experience the dual synergy: Miloš Mladenović's digital synth accordion synthesis colliding with Dušan Đorđević's resonant acoustic chamber tones.",
+    "spotify": "Spotify",
+    "soundcloud": "SoundCloud",
+    "youtube": "YouTube",
+    "interactiveMode": "Interactive Synthesizer Mode",
+    "tracks": "Tracks",
+    "prev": "Previous Track",
+    "next": "Next Track",
+    "play": "Play Synthesizer Demo",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute"
+  },
+  "tour": {
+    "badge": "Live Tour 2026 Schedule",
+    "title": "UPCOMING",
+    "titleAccent": "TOUR DATES",
+    "description": "Catch the duo live across major European festivals and club arenas. Witness accordion artistry transformed into peak-time electronic soundscapes.",
+    "filters": {
+      "all": "All Shows",
+      "festival": "Festivals",
+      "club": "Club Nights",
+      "concert": "Concerts"
+    },
+    "status": {
+      "sellingFast": "Selling Fast",
+      "soldOut": "Sold Out",
+      "available": "Tickets Available"
+    },
+    "from": "From",
+    "generalEntry": "General Entry",
+    "vipBtn": "VIP / Promoter",
+    "bookBtn": "Book / Tickets",
+    "cta": {
+      "badge": "Festival Promoters & Event Organizers",
+      "title": "LOOKING TO BRING MASTER&BEATS TO YOUR STAGE?",
+      "description": "Open for European & International festival lineups, club residencies, and custom electro-acoustic show productions.",
+      "btn": "Submit Promoter Inquiry"
+    }
+  },
+  "about": {
+    "badge": "Origin & Identity • Founded 2019",
+    "title": "THE ARCHITECTS OF",
+    "titleAccent": "ELECTRO-ACCORDION",
+    "description": "<strong>Master&Beats</strong> is a modern electro-acoustic duo from Serbia founded in 2019, combining electric accordion (<red>Miloš Mladenović</red>) and acoustic accordion (<teal>Dušan Đorđević</teal>). They fuse expressive accordion artistry with cutting-edge EDM, pop, and electronic sounds.",
+    "tabs": {
+      "profile": "Artist Profiles",
+      "sound": "Dual Sonic Architecture"
+    },
+    "milos": {
+      "role": "SYNTH & MIDI MASTER",
+      "name": "MILOŠ MLADENOVIĆ",
+      "instrument": "Digital Sound Synthesis & Electric Accordion",
+      "tag1": "Roland Digital Engine",
+      "tag2": "MIDI Modulation",
+      "bio": "Miloš redefines the accordion as a futuristic synthesizer controller. Harnessing polyphonic MIDI triggers, digital bellows expression, and custom distortion matrices, he unleashes blistering leads, piercing arpeggios, and heavy basslines that drive the duo's peak-time club and festival drops.",
+      "sigTitle": "Signature Elements:",
+      "sig1": "Bellows-controlled cutoff filter & pitch bend expression",
+      "sig2": "Overdrive & cyber-chorus electronic accordion processing",
+      "sig3": "Live trigger pads firing 808 sub drops and tech-house stabs",
+      "quote": "\"The accordion is the ultimate synthesizer.\"",
+      "colorCode": "#FF0055 NEON MAGENTA"
+    },
+    "dusan": {
+      "role": "VIRTUOSO ACOUSTIC MAESTRO",
+      "name": "DUŠAN ĐORĐEVIĆ",
+      "instrument": "Concert Chamber Resonance & Folk Balkan Soul",
+      "tag1": "Concert Reeds",
+      "tag2": "Polyrhythmic Ornament",
+      "bio": "Dušan provides the beating human heart of the duo. Trained in rigorous classical accordion concert literature and steeped in deep Serbian folklore, his acoustic instrument commands organic warmth, rapid-fire ornamental Balkan runs, and soaring melodic harmonies that breathe organic life into modern electronic beats.",
+      "sigTitle": "Signature Elements:",
+      "sig1": "Double-reed cassotto resonance chamber acoustic richness",
+      "sig2": "Complex 7/8, 9/8 and 11/8 Serbian and Balkan dance meters",
+      "sig3": "Custom studio condenser mic capsule pickups for high fidelity",
+      "quote": "\"Balkan soul wrapped in cyber steel.\"",
+      "colorCode": "#00E5FF CYBER CYAN"
+    },
+    "sonic": {
+      "el1Title": "01. ELECTRIC FREEDOM",
+      "el1Body": "Electric bellows pressure translates in real time into cutoff frequencies, wavetable distortion, and envelope triggers, transforming physical accordion gestures into explosive synth modulations.",
+      "el2Title": "02. LIVE SYNERGY",
+      "el2Body": "Rather than using canned backing tracks, both artists perform in tight polyphonic dialogue. Miloš handles digital leads and sub-bass while Dušan responds with acoustic counter-melodies.",
+      "el3Title": "03. BALKAN CHROMATICS",
+      "el3Body": "Rooted in centuries of South Slavic accordion tradition, their music integrates microtonal inflections, ornamental trills, and lightning-speed chromatic triplets into futuristic dance tempos."
+    }
+  },
+  "gear": {
+    "badge": "Origin & Identity • Founded 2019",
+    "title": "THE ARCHITECTS OF",
+    "titleAccent": "ELECTRO-ACCORDION",
+    "description": "Visual glimpses from electro-acoustic setups, festival drops, and live stage gear.",
+    "items": {
+      "1": { "title": "EXIT FESTIVAL MAIN STAGE", "category": "LIVE SHOW" },
+      "2": { "title": "ELECTRIC ACCORDION SETUP", "category": "GEAR & SYNTH" },
+      "3": { "title": "SYNTH & BEAT DROP", "category": "STUDIO RIG" },
+      "4": { "title": "BELGRADE NIGHT CLUB", "category": "STAGE ATMOSPHERE" }
+    }
+  },
+  "booking": {
+    "officialBadge": "OFFICIAL BOOKING INQUIRY",
+    "title": "BRING MASTER & BEATS TO YOUR STAGE",
+    "description": "Complete this brief inquiry for festivals, clubs, or custom electro-acoustic concert bookings across Serbia & Europe.",
+    "labels": {
+      "name": "Your Name / Organization *",
+      "email": "Official Email *",
+      "phone": "Phone / WhatsApp",
+      "eventType": "Event Type *",
+      "date": "Proposed Date *",
+      "venue": "Venue & City / Country *",
+      "message": "Message & Show Requirements",
+      "riderCheckbox": "I would like to receive email notifications about future performances."
+    },
+    "placeholders": {
+      "name": "e.g. Alex Turner (EXIT Festival)",
+      "email": "your@email.com",
+      "phone": "+381 60 123 4567",
+      "date": "e.g. October 15, 2026 or Fall 2026",
+      "venue": "e.g. Club Kaufleuten, Zurich",
+      "message": "Share details about your stage setup, expected audience size, or preferred set duration (60 / 90 mins)..."
+    },
+    "eventTypes": {
+      "festival": "Music Festival",
+      "club": "Electronic / Club Night",
+      "corporate": "Corporate Event / Gala",
+      "private": "Private VIP Event"
+    },
+    "submitBtn": "Send Booking Inquiry",
+    "submitting": "Dispatching Booking Request...",
+    "success": {
+      "ref": "INQUIRY DISPATCHED • REF:",
+      "title": "BOOKING REQUEST RECEIVED",
+      "body": "Thank you, <name/>. Our management team will review your dates for <location/> and respond within 24 hours with our technical rider and availability.",
+      "organizer": "Organizer:",
+      "email": "Email:",
+      "eventFormat": "Event Format:",
+      "directContact": "Direct Contact:",
+      "backBtn": "Back to Experience"
+    }
+  },
+  "video": {
+    "liveBadge": "LIVE CONCERT • SHOWREEL",
+    "title": "LIVE AT OMLADINSKI CENTAR",
+    "officialAfter": "Master&Beats",
+    "description": "Recorded live at Omladinski Centar in Zaječar, Serbia",
+    "watchYoutube": "Watch on YouTube",
+    "bookBtn": "Book For Your Festival"
+  },
+  "footer": {
+    "description": "Miloš Mladenović (Electric Accordion) & Dušan Đorđević (Acoustic Accordion). Electro-acoustic crossover duo founded in 2019 in Serbia, transforming traditional accordion artistry into futuristic electronic festival music.",
+    "contactLabel": "Direct Management & Inquiries",
+    "nav": {
+      "title": "Navigation",
+      "home": "Home",
+      "audio": "Live Synthesizer Audio",
+      "tour": "Tour & Festival Dates",
+      "about": "About Miloš & Dušan",
+      "gear": "Tech & Gear Arsenal"
+    },
+    "stream": {
+      "title": "Stream & Follow",
+      "youtube": "YouTube Channel",
+      "soundcloud": "SoundCloud",
+      "instagram": "Instagram",
+      "riderPdf": "Facebook"
+    },
+    "newsletter": {
+      "title": "Tour Drop Alerts",
+      "description": "Be the first to receive unreleased festival bootlegs, live dates, and backstage passes.",
+      "placeholder": "Enter your email",
+      "spam": "No spam. Only high-energy tour releases.",
+      "subscribed": "You're subscribed to Tour Alerts!"
+    },
+    "copyright": "All rights reserved.",
+    "craftedFor": "From Paris with love, Keanu"
+  }
+}

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-milos: #FF0055;
+    --color-dusan: #00E5FF;
+  }
+
+body, .font-sans {
+  font-family: 'Inter', sans-serif !important;
+  color: #f1f5f9;
+}
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0em;
+}
+
+.font-syne {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-caveat {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-kaushan {
+  font-family: 'Kaushan Script', cursive;
+}
+
+/* Glassmorphism containers matching Sonora UI */
+.glass-panel {
+  background: rgba(18, 18, 26, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-milos {
+  background: rgba(26, 12, 20, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 0, 85, 0.25);
+}
+
+.glass-panel-dusan {
+  background: rgba(10, 20, 30, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+}
+
+.neon-glow-pink {
+  box-shadow: 0 0 25px rgba(255, 0, 85, 0.4), 0 0 50px rgba(255, 0, 85, 0.15);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4), 0 0 50px rgba(0, 229, 255, 0.15);
+}
+
+.neon-glow-duo {
+  box-shadow: 0 0 30px rgba(255, 0, 85, 0.3), 0 0 45px rgba(0, 229, 255, 0.3);
+}
+
+.neon-border-pink {
+  border-color: rgba(255, 0, 85, 0.6);
+  box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
+}
+
+.neon-border-cyan {
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+.text-gradient-duo {
+  background: linear-gradient(135deg, #FF0055 0%, #E60067 40%, #00E5FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient-duo {
+  background: linear-gradient(135deg, #FF0055 0%, #9B00E8 50%, #00E5FF 100%);
+}
+
+.bg-grid-cyber {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom waveform animation */
+@keyframes pulseWave {
+  0%, 100% { height: 20%; }
+  50% { height: 95%; }
+}
+
+.animate-waveform-1 { animation: pulseWave 0.8s ease-in-out infinite; }
+.animate-waveform-2 { animation: pulseWave 1.1s ease-in-out infinite 0.2s; }
+.animate-waveform-3 { animation: pulseWave 0.7s ease-in-out infinite 0.4s; }
+.animate-waveform-4 { animation: pulseWave 1.3s ease-in-out infinite 0.1s; }
+

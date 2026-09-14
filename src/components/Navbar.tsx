@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect, useRef } from "react";
-import { Music, Calendar, Users, Sliders, Mail, Images, Menu, X, Disc3, Volume2 } from "lucide-react";
+import { Music, Calendar, Users, Sliders, Mail, Menu, X } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useTranslation } from "react-i18next";
@@ -24,7 +24,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, isPlaying, onTogg
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Entrance: slide down from top on page load
   useGSAP(() => {
     gsap.from(navbarRef.current, {
       y: -15,
@@ -121,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, isPlaying, onTogg
               onClick={() => scrollToSection("gear")}
               className="px-4 py-2 rounded-full text-xs font-semibold tracking-wide text-white/75 hover:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
             >
-              <Images className="w-3.5 h-3.5 text-[#00E5FF]" />
+              <Sliders className="w-3.5 h-3.5 text-[#00E5FF]" />
               {t("nav.gear")}
             </button>
           </nav>
@@ -152,12 +151,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, isPlaying, onTogg
               </button>
             </div>
 
-        
-            {/* Book CTA */}
+            {/* Book CTA - Sakriveno na telefonima (hidden sm:inline-flex) */}
             <button
               id="nav-book-cta-btn"
               onClick={onOpenBooking}
-              className="relative group px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(179,0,45,0.4)] hover:shadow-[0_0_25px_rgba(0,119,217,0.55)] active:scale-95"
+              className="hidden sm:inline-flex relative group px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(179,0,45,0.4)] hover:shadow-[0_0_25px_rgba(0,119,217,0.55)] active:scale-95"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#B3002D] via-[#5B0676] to-[#0077D9] transition-transform duration-300 group-hover:scale-105"></div>
               <span className="relative z-10 flex items-center gap-2">
@@ -187,34 +185,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking, isPlaying, onTogg
             className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 text-sm font-semibold text-white/90 hover:bg-white/10 transition-colors"
           >
             <Music className="w-4 h-4 text-[#FF0055]" />
-            {t("nav.mobileMenu.music")}
+            {t("nav.music")}
           </button>
           <button
             onClick={() => scrollToSection("tour")}
             className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 text-sm font-semibold text-white/90 hover:bg-white/10 transition-colors"
           >
             <Calendar className="w-4 h-4 text-[#00E5FF]" />
-            {t("nav.mobileMenu.tour")}
+            {t("nav.tour")}
           </button>
           <button
             onClick={() => scrollToSection("about")}
             className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 text-sm font-semibold text-white/90 hover:bg-white/10 transition-colors"
           >
             <Users className="w-4 h-4 text-[#FF0055]" />
-            {t("nav.mobileMenu.about")}
+            {t("nav.about")}
           </button>
           <button
             onClick={() => scrollToSection("gear")}
             className="w-full flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 text-sm font-semibold text-white/90 hover:bg-white/10 transition-colors"
           >
             <Sliders className="w-4 h-4 text-[#00E5FF]" />
-            {t("nav.mobileMenu.gear")}
+            {t("nav.gear")}
           </button>
           <button
-            onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-[#FF0055] to-[#00E5FF] text-white font-bold text-center tracking-wider uppercase text-sm shadow-[0_0_20px_rgba(255,0,85,0.4)]"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenBooking();
+            }}
+            className="relative w-full group px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white overflow-hidden transition-all duration-300 shadow-[0_0_20px_rgba(179,0,45,0.4)] active:scale-95 flex items-center justify-center gap-2"
           >
-            {t("nav.mobileMenu.bookBtn")}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#B3002D] via-[#5B0676] to-[#0077D9]"></div>
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              <Mail className="w-4 h-4" />
+              {t("nav.bookDuo")}
+            </span>
           </button>
         </div>
       )}

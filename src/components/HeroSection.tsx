@@ -23,17 +23,11 @@ interface GCalEvent {
 }
 
 interface NextGig {
-  /** ISO string of the event start — drives the countdown */
   startISO: string;
-  /** Human-readable venue/event name (from summary) */
   venue: string;
-  /** City extracted from location field */
   city: string;
-  /** Country extracted from location field */
   country: string;
-  /** Stage extracted from location field (optional) */
   stage?: string;
-  /** Formatted date label, e.g. "JUL 11, 2026" */
   dateLabel: string;
 }
 
@@ -75,9 +69,7 @@ function calcTimeLeft(targetISO: string): TimeLeft {
   };
 }
 
-// ─── Static fallback (used when API is unreachable) ───────────────────────
 function buildFallbackGig(): NextGig {
-  // Fallback: EXIT Festival 2026 — same date the static code used as reference
   const fallbackDate = new Date();
   fallbackDate.setDate(fallbackDate.getDate() + 27);
   fallbackDate.setHours(20, 0, 0, 0);
@@ -91,7 +83,6 @@ function buildFallbackGig(): NextGig {
   };
 }
 
-// ─── Props ─────────────────────────────────────────────────────────────────
 interface HeroSectionProps {
   onOpenBooking: () => void;
   onOpenVideo: () => void;
@@ -101,26 +92,21 @@ interface HeroSectionProps {
   onTogglePlay: () => void;
 }
 
-// ──────────────────────────────────────────────────────────────────────────
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenBooking,
   onOpenVideo,
-  onScrollToPlayer,
   onScrollToTour,
 }) => {
   const { t } = useTranslation();
   const heroRef = useRef<HTMLElement>(null);
 
-  // ── GCal fetch state ─────────────────────────────────────────────────────
   const [nextGig, setNextGig]         = useState<NextGig | null>(null);
   const [gigLoading, setGigLoading]   = useState(true);
 
-  // ── Countdown state ──────────────────────────────────────────────────────
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 27, hours: 14, minutes: 36, seconds: 52,
   });
 
-  // ── GSAP entrance ────────────────────────────────────────────────────────
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
     tl.from(".hero-left-item",  { y: 20, opacity: 0, duration: 0.6, stagger: 0.1,  clearProps: "all" });
@@ -128,7 +114,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     tl.from(".hero-right-item", { scale: 0.98, opacity: 0, duration: 0.55, stagger: 0.08, clearProps: "all" }, "-=0.35");
   }, { scope: heroRef });
 
-  // ── Fetch next gig from Google Calendar ──────────────────────────────────
   const fetchNextGig = useCallback(async (signal: AbortSignal) => {
     setGigLoading(true);
     const now = new Date().toISOString();
@@ -148,7 +133,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       const items: GCalEvent[] = data.items ?? [];
 
       if (items.length === 0) {
-        // Calendar live but no upcoming events — use fallback silently
         setNextGig(buildFallbackGig());
         return;
       }
@@ -180,10 +164,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => controller.abort();
   }, [fetchNextGig]);
 
-  // ── Live countdown — re-evaluates every second against the live GCal target
   useEffect(() => {
     if (!nextGig) return;
-    // Kick off immediately so there is no 1-second blank flash
     setTimeLeft(calcTimeLeft(nextGig.startISO));
     const interval = setInterval(() => {
       setTimeLeft(calcTimeLeft(nextGig.startISO));
@@ -191,7 +173,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     return () => clearInterval(interval);
   }, [nextGig]);
 
-  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <section
       ref={heroRef}
@@ -209,7 +190,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* ── Top Badges ───────────────────────────────────────────────── */}
-        <div className="flex flex-wrap items-center gap-3 mb-6 hero-left-item">
+        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6 hero-left-item">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-md text-xs font-semibold text-white/90">
             <span className="w-2 h-2 rounded-full bg-[#FF0055] animate-ping" />
             <span className="text-white/80">{t("hero.badge")}</span>
@@ -222,14 +203,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-          {/* ── LEFT COLUMN ──────────────────────────────────────────── */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* ── LEFT COLUMN ──────────────────── */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start">
 
-            {/* Headline */}
-            <div className="relative hero-left-item">
-              <div className="relative inline-block">
-                <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.88] text-white uppercase select-none">
-                  {t("hero.tagline")} <span className="text-white"></span>
+            {/* Headline - Samo mobilni napucan na text-8xl, desktop ostao originalan */}
+            <div className="relative hero-left-item w-full">
+              <div className="relative inline-block w-full">
+                <h1 className="font-bebas text-8xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.82] sm:leading-[0.88] text-white uppercase select-none text-center lg:text-left">
+                  MASTER &amp;
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B3002D] via-[#5B0676] to-[#0077D9]">
                     BEATS
@@ -237,54 +218,54 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <img
                     src={harmonikagif}
                     alt="Harmonika"
-                    className="inline-block h-[0.9em] w-auto align-middle ml-3 sm:ml-5 -translate-y-1 select-none pointer-events-none"
+                    className="inline-block h-[0.7em] sm:h-[0.9em] w-auto align-middle ml-2 sm:ml-5 -translate-y-1 sm:-translate-y-2 select-none pointer-events-none"
                   />
                 </h1>
               </div>
             </div>
 
             {/* Description */}
-           <p className="text-sm sm:text-base text-slate-400 font-sans max-w-xl hero-left-item">
-  {(() => {
-    const rawText = t("hero.description").replace(/<[^>]+>/g, "");
-    const parts = rawText.split(/(Master&Beats|Miloš Mladenović|Dušan Đorđević)/g);
+            <p className="text-sm sm:text-base text-slate-400 font-sans max-w-xl hero-left-item text-center lg:text-left">
+              {(() => {
+                const rawText = t("hero.description").replace(/<[^>]+>/g, "");
+                const parts = rawText.split(/(Master&Beats|Miloš Mladenović|Dušan Đorđević)/g);
 
-    return parts.map((part, index) => {
-      if (part === "Master&Beats") {
-        return (
-          <strong key={index} className="text-white font-semibold">
-            Master&amp;Beats
-          </strong>
-        );
-      }
-      if (part === "Miloš Mladenović") {
-        return (
-          <span key={index} className="text-[#00E5FF] font-semibold">
-            Miloš Mladenović
-          </span>
-        );
-      }
-      if (part === "Dušan Đorđević") {
-        return (
-          <span key={index} className="text-[#FF0055] font-semibold">
-            Dušan Đorđević
-          </span>
-        );
-      }
-      return part;
-    });
-  })()}
-</p>
+                return parts.map((part, index) => {
+                  if (part === "Master&Beats") {
+                    return (
+                      <strong key={index} className="text-white font-semibold">
+                        Master&amp;Beats
+                      </strong>
+                    );
+                  }
+                  if (part === "Miloš Mladenović") {
+                    return (
+                      <span key={index} className="text-[#00E5FF] font-semibold">
+                        Miloš Mladenović
+                      </span>
+                    );
+                  }
+                  if (part === "Dušan Đorđević") {
+                    return (
+                      <span key={index} className="text-[#FF0055] font-semibold">
+                        Dušan Đorđević
+                      </span>
+                    );
+                  }
+                  return part;
+                });
+              })()}
+            </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2 hero-left-item">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 w-full sm:w-auto hero-left-item">
               <button
                 id="hero-book-now-btn"
                 onClick={onOpenBooking}
-                className="group relative px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider text-white overflow-hidden shadow-[0_0_25px_rgba(179,0,45,0.45)] hover:shadow-[0_0_35px_rgba(0,119,217,0.6)] transition-all duration-300 active:scale-95"
+                className="group relative w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider text-white overflow-hidden shadow-[0_0_25px_rgba(179,0,45,0.45)] hover:shadow-[0_0_35px_rgba(0,119,217,0.6)] transition-all duration-300 active:scale-95"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#B3002D] via-[#5B0676] to-[#0077D9] transition-all duration-300 group-hover:scale-105" />
-                <span className="relative z-10 flex items-center gap-2.5">
+                <span className="relative z-10 flex items-center justify-center gap-2.5">
                   <Ticket className="w-4 h-4" />
                   {t("hero.bookBtn")}
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -294,27 +275,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <button
                 id="hero-watch-video-btn"
                 onClick={onOpenVideo}
-                className="group flex items-center gap-4 text-white font-medium text-sm hover:text-white/80 transition-all duration-300 active:scale-95 cursor-pointer"
+                className="group flex items-center justify-center gap-3.5 text-white font-medium text-sm hover:text-white/80 transition-all duration-300 active:scale-95 cursor-pointer py-2"
               >
-                <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-white/20 border border-white/30 flex items-center justify-center shrink-0 backdrop-blur-md transition-all duration-300 shadow-lg">
-                  <Play className="w-5 h-5 text-white fill-white ml-0.5" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 group-hover:bg-white/20 border border-white/30 flex items-center justify-center shrink-0 backdrop-blur-md transition-all duration-300 shadow-lg">
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white fill-white ml-0.5" />
                 </div>
                 <span className="whitespace-nowrap">{t("hero.watchBtn")}</span>
               </button>
             </div>
 
             {/* Trust Marker */}
-            <div className="pt-8 border-t border-white/10 max-w-lg hero-trust-badge">
-              <div className="flex items-center gap-4">
+            <div className="pt-8 border-t border-white/10 w-full max-w-lg hero-trust-badge">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <div className="flex -space-x-2 overflow-hidden">
                   <img className="inline-block h-9 w-9 rounded-full ring-2 ring-black object-cover" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=100&auto=format&fit=crop&q=80" alt="Festival stage" />
                   <img className="inline-block h-9 w-9 rounded-full ring-2 ring-black object-cover" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=100&auto=format&fit=crop&q=80" alt="DJ Performance" />
                   <img className="inline-block h-9 w-9 rounded-full ring-2 ring-black object-cover" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=100&auto=format&fit=crop&q=80" alt="Crowd" />
                   <div className="flex items-center justify-center h-9 w-9 rounded-full ring-2 ring-black bg-[#FF0055] text-[10px] font-bold text-white tracking-wider font-sans">+50</div>
                 </div>
-                <div className="flex flex-col justify-center font-sans">
+                <div className="flex flex-col justify-center font-sans text-center sm:text-left">
                   <span className="text-xs font-bold tracking-wider text-white uppercase">{t("hero.trust.title")}</span>
-                  <div className="flex items-center gap-2 mt-1">
+                  <div className="flex items-center justify-center sm:justify-start gap-2 mt-1">
                     <div className="flex text-[#00E5FF] text-xs leading-none">★★★★★</div>
                     <span className="text-xs text-white/60 font-medium leading-none">{t("hero.trust.subtitle")}</span>
                   </div>
@@ -326,7 +307,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* ── RIGHT COLUMN ─────────────────────────────────────────── */}
           <div className="lg:col-span-5 space-y-5">
 
-            {/* Main image card — venue name & location from GCal */}
+            {/* Main image card */}
             <div className="relative rounded-3xl overflow-hidden glass-panel border border-white/15 p-2 shadow-2xl group transition-all duration-500 hover:border-white/30 hero-right-item">
               <div className="relative h-64 sm:h-72 md:h-80 rounded-2xl overflow-hidden">
                 <img
@@ -337,7 +318,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-[#060608]/40 to-transparent" />
 
-                {/* Instrument badges — always static */}
+                {/* Instrument badges */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                   <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-[#FF0055]/50 text-[11px] font-bold tracking-wider uppercase text-[#FF0055] flex items-center gap-1.5 shadow-[0_0_10px_rgba(255,0,85,0.4)]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#FF0055] animate-pulse" />
@@ -389,7 +370,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-              {/* ── Countdown Timer Widget — driven by GCal start time ── */}
+              {/* Countdown Timer Widget */}
               <div className="glass-panel p-5 rounded-2xl border border-white/10 hover:border-[#FF0055]/40 transition-colors shadow-lg hero-right-item">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF0055] flex items-center gap-1.5">
@@ -403,7 +384,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   )}
                 </div>
 
-                {/* 2×2 digit grid */}
                 <div className="grid grid-cols-2 gap-2">
                   {(["days","hours","minutes","seconds"] as const).map((unit, i) => (
                     <div
@@ -427,16 +407,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     </div>
                   ))}
                 </div>
-
-                {/* Event date label beneath the grid */}
-                {!gigLoading && nextGig && (
-                  <p className="mt-3 text-center text-[10px] font-sans text-white/30 tracking-wider uppercase">
-                   
-                  </p>
-                )}
               </div>
 
-              {/* ── Tour Pass Widget — live event metadata ─────────────── */}
+              {/* Tour Pass Widget */}
               <div className="glass-panel p-5 rounded-2xl border border-white/10 hover:border-[#00E5FF]/40 transition-colors shadow-lg relative overflow-hidden flex flex-col justify-between hero-right-item">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] font-bold uppercase tracking-widest text-[#00E5FF]">
@@ -448,7 +421,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
 
                 {gigLoading ? (
-                  /* Skeleton while fetching */
                   <div className="flex-1 flex flex-col gap-2 my-2 animate-pulse">
                     <div className="h-3.5 w-3/4 rounded-full bg-white/10" />
                     <div className="h-3 w-1/2 rounded-full bg-white/5" />
@@ -456,24 +428,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </div>
                 ) : (
                   <div className="my-2 min-w-0">
-                    {/* Venue */}
                     <div className="text-sm font-semibold text-white truncate">
                       {nextGig?.venue ?? t("hero.tourCard.leg")}
                     </div>
-                    {/* City / Country */}
                     {nextGig && (
                       <div className="text-xs text-white/60 flex items-center gap-1 mt-0.5">
                         <MapPin className="w-3 h-3 text-[#FF0055] shrink-0" />
                         {nextGig.city}, {nextGig.country}
                       </div>
                     )}
-                    {/* Stage if available */}
                     {nextGig?.stage && (
                       <div className="text-[11px] text-white/40 mt-0.5 truncate">
                         {nextGig.stage}
                       </div>
                     )}
-                    {/* Date label */}
                     {nextGig && (
                       <div className="text-[11px] text-[#00E5FF]/70 font-semibold mt-1">
                         {nextGig.dateLabel}
